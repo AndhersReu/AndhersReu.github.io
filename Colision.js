@@ -9,7 +9,7 @@ function setup(){
   cubo2.position.x = -0.7;
   
   camara = new THREE.PerspectiveCamera();
-  camara.pósition.z = 5;
+  camara.position.z = 5;
   
   
   escena =  new THREE.Scene();
