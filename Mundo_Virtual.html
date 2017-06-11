@@ -59,13 +59,13 @@ P2forma.rotateY( Math.PI/6);
 
   */  
 THREE.ImageUtils.crossOrigin = '';
-var Textura   = THREE.ImageUtils.loadTexture('Lava.jpg');
+var Textura   = THREE.ImageUtils.loadTexture('Azul.jpg');
 var P1_Material  = new THREE.MeshBasicMaterial( {map: Textura} );
 var P1arbolMalla = new THREE.Mesh(P1arbolForma, P1_Material);   
     
 var tableroForma = new THREE.CylinderGeometry(70, 70,1);
 var tableroMaterial = new THREE.MeshNormalMaterial();
-var tableroMalla = new THREE.Mesh(tableroForma,tableroMaterial);
+var tableroMalla = new THREE.Mesh(tableroForma, P1_Material);
        
 var escena = new THREE.Scene();
 escena.add(tableroMalla);
