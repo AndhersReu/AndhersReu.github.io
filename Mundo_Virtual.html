@@ -8,7 +8,8 @@
   <body>
 <script src="three.min.js"></script>
 <script>    
-    
+
+function setup(){
 var P1cuelloForma = new THREE.CylinderGeometry(1, 1, 10);
 var P1cuello2Forma = new THREE.CylinderGeometry(1, 1, 10);
 var P1pataForma = new THREE.CylinderGeometry(1.5, 1.5, 10);
@@ -79,8 +80,19 @@ var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95, 
                       window.innerHeight*.95 );
 document.body.appendChild( renderizador.domElement );
-renderizador.render( escena, camara );     
+}  
+ 
+ 
+  
+function loop(){  
+requestAnimationFrame(loop);
+renderizador.render( escena, camara ); 
+}
 
+var camara, escena, renderizador, tableroMalla;
+setup();
+loop();
+  
     </script>
   </body>
 </html>
