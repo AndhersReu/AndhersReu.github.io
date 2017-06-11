@@ -1,0 +1,51 @@
+!doctype html>
+<html>
+  <head>
+    
+    <title>Letras.js</title>
+    <meta http-equiv="Content-Type"
+      content="text/html; charset=UTF-8">
+  
+  </head>
+  <body>
+  <script src="three.min.js"></script>
+  <script>
+
+
+var material = new THREE.MeshNormalMaterial( );	
+var loader = new THREE.FontLoader();
+
+loader.load( 'gentilis_bold.typeface.json', function ( font ) {
+
+	var geometry = new THREE.TextGeometry( 'Hello three.js!', {
+		font: font,
+		size: 80,
+		height: 5,
+		curveSegments: 12,
+		bevelEnabled: true,
+		bevelThickness: 10,
+		bevelSize: 8,
+		bevelSegments: 5
+	} );
+} );
+
+var TextoM = new THREE.Mesh(geometry, material)
+
+//--------------------------------------------------------------------------------------------------------------------
+//________________________________________ LO NECESARIO PARA CREAR LA MALLA _________________________________________
+//-------------------------------------------------------------------------------------------------------------------
+	
+   var escena = new THREE.Scene();
+   escena.add(TextoM);
+
+   var camara = new THREE.PerspectiveCamera();
+   camara.position.z = 120;
+  	
+   renderizador = new THREE.WebGLRenderer();
+   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+   document.body.appendChild( renderizador.domElement );
+   renderizador.render( escena, camara );
+
+  </script>
+  </body> 
+  </html>
