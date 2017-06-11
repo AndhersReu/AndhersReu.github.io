@@ -60,11 +60,7 @@ P1arbolForma.merge(P1pataMalla.geometry, P1pataMalla.matrix);
 P1arbolForma.merge(P1cabeza1Malla.geometry, P1cabeza1Malla.matrix);
 P1arbolForma.merge(P1cabeza2Malla.geometry, P1cabeza2Malla.matrix);
 
-THREE.ImageUtils.crossOrigin = '';
-var Textura   = THREE.ImageUtils.loadTexture('Rojo.jpg');
-var material  = new THREE.MeshBasicMaterial( {map: Textura} );
-var P1arbolMalla = new THREE.Mesh(P1arbolForma, material);
-
+    
 Saga.translate(40, 17, -10);
 Reliquia.translate(-25, 17,-30);
 P4forma.translate(-50, 2, -40);
@@ -77,14 +73,17 @@ TorchitForma.translate(-15, 8, -40);
 P4forma.rotateY( Math.PI/4);
 P2forma.rotateY( Math.PI/6);
 
+    
+THREE.ImageUtils.crossOrigin = '';
+var Textura   = THREE.ImageUtils.loadTexture('Rojo.jpg');
+var P1_Material  = new THREE.MeshBasicMaterial( {map: Textura} );
+var P1arbolMalla = new THREE.Mesh(P1arbolForma, P1_material);   
+    
 var tableroForma = new THREE.CylinderGeometry(70, 70,1);
 var tableroMaterial = new THREE.MeshNormalMaterial();
 var tableroMalla = new THREE.Mesh(tableroForma,tableroMaterial);
 
-    
-    
-    
-    
+       
 var escena = new THREE.Scene();
 escena.add(P4malla,P2malla,P3arbolMalla,P1arbolMalla,MagnemiteMalla,TorchitMalla,tableroMalla);
 escena.add(ReliquiaM);
