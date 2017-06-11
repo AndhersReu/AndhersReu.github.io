@@ -61,7 +61,7 @@ P2forma.rotateY( Math.PI/6);
 THREE.ImageUtils.crossOrigin = '';
 var Textura   = THREE.ImageUtils.loadTexture('Rojo.jpg');
 var P1_Material  = new THREE.MeshBasicMaterial( {map: Textura} );
-var P1arbolMalla = new THREE.Mesh(P1arbolForma, P1_material);   
+var P1arbolMalla = new THREE.Mesh(P1arbolForma, P1_Material);   
     
 var tableroForma = new THREE.CylinderGeometry(70, 70,1);
 var tableroMaterial = new THREE.MeshNormalMaterial();
