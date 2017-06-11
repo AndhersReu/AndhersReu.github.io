@@ -59,8 +59,8 @@ P2forma.rotateY( Math.PI/6);
 
   */  
 THREE.ImageUtils.crossOrigin = '';
-var textura   = THREE.ImageUtils.loadTexture('Azul.jpg');
-var P1_Material  = new THREE.MeshBasicMaterial( {map: textura} );
+var textura = THREE.ImageUtils.loadTexture('https:Azul.jpg');
+var P1_Material = new THREE.MeshBasicMaterial( {map:textura} );
 var P1arbolMalla = new THREE.Mesh(P1arbolForma, P1_Material);   
     
 var tableroForma = new THREE.CylinderGeometry(70, 70,1);
