@@ -9,6 +9,8 @@
 <script src="three.min.js"></script>
 <script>    
 
+var camara, escena, renderizador, tableroMalla;  
+  
 function setup(){
 var P1cuelloForma = new THREE.CylinderGeometry(1, 1, 10);
 var P1cuello2Forma = new THREE.CylinderGeometry(1, 1, 10);
@@ -71,7 +73,6 @@ var tableroMalla = new THREE.Mesh(tableroForma, P1_Material);
 var escena = new THREE.Scene();
 escena.add(tableroMalla);
 
-
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 180;
 camara.position.y = 40;
@@ -82,14 +83,12 @@ renderizador.setSize( window.innerHeight*.95,
 document.body.appendChild( renderizador.domElement );
 }  
  
- 
-  
+
 function loop(){  
 requestAnimationFrame(loop);
 renderizador.render( escena, camara ); 
 }
 
-var camara, escena, renderizador, tableroMalla;
 setup();
 loop();
   
