@@ -7,8 +7,22 @@
   </head>
   <body>
 <script src="three.min.js"></script>
-<script src="Personaje_1.js">
-</script>
+  <script   src="Personaje_4.js">
+  </script>
+  <script   src="Personaje_2.js">
+  </script>
+  <script   src="Personaje_3.js">
+  </script>
+  <script   src="Personaje_1.js">
+  </script>
+  <script   src="Personaje_5.js">
+  </script>
+  <script   src="Personaje_6.js">
+  </script>
+  <script   src="RELIQUIA.js">
+  </script>
+  <script   src="SANGA.js">
+  </script>
 
 <script>
 var camara, escena, renderizador, tableroMalla, P1arbolMalla;  
@@ -19,20 +33,29 @@ THREE.ImageUtils.crossOrigin = '';
 var textura = THREE.ImageUtils.loadTexture('https:Azul.jpg');
 var material = new THREE.MeshBasicMaterial( {map:textura} );    
 
-THREE.ImageUtils.crossOrigin = '';
 var textura_1 = THREE.ImageUtils.loadTexture('https:Rojo.jpg');
 var material_1 = new THREE.MeshBasicMaterial( {map:textura_1} );    
 
+var textura_2 = THREE.ImageUtils.loadTexture('https:Azulazo.jpg');
+var material_2 = new THREE.MeshBasicMaterial( {map:textura_2} );    
 
-  
 //============================ AJUSTE PARAMETROS ===================================    
+Saga.translate(40, 17, -10);
+Reliquia.translate(-25, 17,-30);
+P4forma.translate(-50, 2, -40);
+P2forma.translate(1, 2, 55);
+P3arbolForma.translate(25, 18, 20);
 P1arbolForma.translate(-23, 9, 15);
+MagnemiteForma.translate(-10, -18, 6);
+TorchitForma.translate(-15, 8, -40);							
+P4forma.rotateY( Math.PI/4);
+P2forma.rotateY( Math.PI/6);
+
 P1arbolMalla = new THREE.Mesh(P1arbolForma, material_1);
+P2malla = new THREE.Mesh( P2forma, material_2 );
 
 var tableroForma = new THREE.CylinderGeometry(70, 70,1);
 tableroMalla = new THREE.Mesh(tableroForma, material);
-
-  
 //============================ ESCENA ===================================  
 escena = new THREE.Scene();
 escena.add(tableroMalla, P1arbolMalla);
