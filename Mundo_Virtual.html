@@ -7,27 +7,42 @@
   </head>
   <body>
 <script src="three.min.js"></script>
-<script>    
+<script src="Personaje_1.js">
+</script>
 
-var camara, escena, renderizador, tableroMalla;  
+<script>
+var camara, escena, renderizador, tableroMalla, P1arbolMalla;  
   
 function setup(){
+  
 THREE.ImageUtils.crossOrigin = '';
 var textura = THREE.ImageUtils.loadTexture('https:Azul.jpg');
 var material = new THREE.MeshBasicMaterial( {map:textura} );    
+
+THREE.ImageUtils.crossOrigin = '';
+var textura_1 = THREE.ImageUtils.loadTexture('https:Rojo.jpg');
+var material_1 = new THREE.MeshBasicMaterial( {map:textura_1} );    
+
+
+  
+//============================ AJUSTE PARAMETROS ===================================    
+P1arbolForma.translate(-23, 9, 15);
+P1arbolMalla = new THREE.Mesh(P1arbolForma, material_1);
+
 var tableroForma = new THREE.CylinderGeometry(70, 70,1);
 tableroMalla = new THREE.Mesh(tableroForma, material);
-       
+
+  
+//============================ ESCENA ===================================  
 escena = new THREE.Scene();
-escena.add(tableroMalla);
+escena.add(tableroMalla, P1arbolMalla);
 
 camara = new THREE.PerspectiveCamera();
 camara.position.z = 180;
 camara.position.y = 40;
 
 renderizador = new THREE.WebGLRenderer();
-renderizador.setSize( window.innerHeight*.95, 
-                      window.innerHeight*.95 );
+renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
 document.body.appendChild( renderizador.domElement );
 }  
  
