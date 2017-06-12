@@ -104,7 +104,4 @@
 
 		
 		var material = new THREE.MeshNormalMaterial();
-		var TorchitMalla = new THREE.Mesh(TorchitForma, material);
-                TorchitMalla.rotateX( Math.PI );
-          	TorchitMalla.rotateY( Math.PI+0.5);		
-	        TorchitMalla.rotateZ( Math.PI );			    
+					    
