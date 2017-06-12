@@ -58,7 +58,7 @@ var tableroForma = new THREE.CylinderGeometry(70, 70,1);
 tableroMalla = new THREE.Mesh(tableroForma, material);
 //============================ ESCENA ===================================  
 escena = new THREE.Scene();
-escena.add(tableroMalla, P1arbolMalla);
+escena.add(tableroMalla, P1arbolMalla, P2malla);
 
 camara = new THREE.PerspectiveCamera();
 camara.position.z = 180;
