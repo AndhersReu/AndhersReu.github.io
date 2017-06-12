@@ -66,12 +66,12 @@ P2forma.rotateY( Math.PI/6);
 //============================ Material ===================================  
 P1arbolMalla = new THREE.Mesh(P1arbolForma, material_1);
 P2malla = new THREE.Mesh( P2forma, material_2 );
-P3arbolMalla = new THREE.Mesh( P3arbolForma, material_3 );
+P3arbolMalla = new THREE.Mesh( P3arbolForma, material_1 );
 P4malla = new THREE.Mesh( P4forma, material_4 );
 MagnemiteMalla = new THREE.Mesh(MagnemiteForma, material_6);
 TorchitMalla = new THREE.Mesh(TorchitForma, material_4);
-ReliquiaM = new THREE.Mesh( Reliquia, material_5 )
-SagaM = new THREE.Mesh(Saga, material_3);	              
+ReliquiaM = new THREE.Mesh( Reliquia, material_3 )
+SagaM = new THREE.Mesh(Saga, material_5);	              
   
 var tableroForma = new THREE.CylinderGeometry(70, 70,1);
 tableroMalla = new THREE.Mesh(tableroForma, material);
