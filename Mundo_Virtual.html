@@ -25,8 +25,8 @@
   </script>
 
 <script>
-var camara, escena, renderizador, tableroMalla, P1arbolMalla;  
-  
+var camara, escena, renderizador, P4malla, P2malla, P3arbolMalla, P1arbolMalla, MagnemiteMalla, TorchitMalla, tableroMalla;  
+var ReliquiaM, SagaM;  
 function setup(){
   
 THREE.ImageUtils.crossOrigin = '';
@@ -38,6 +38,18 @@ var material_1 = new THREE.MeshBasicMaterial( {map:textura_1} );
 
 var textura_2 = THREE.ImageUtils.loadTexture('https:Azulazo.jpg');
 var material_2 = new THREE.MeshBasicMaterial( {map:textura_2} );    
+
+var textura_3 = THREE.ImageUtils.loadTexture('https:Electrico.jpg');
+var material_3 = new THREE.MeshBasicMaterial( {map:textura_3} );    
+
+var textura_4 = THREE.ImageUtils.loadTexture('https:Tierra.jpg');
+var material_4 = new THREE.MeshBasicMaterial( {map:textura_4} );    
+
+var textura_5 = THREE.ImageUtils.loadTexture('https:Prohibido.jpg');
+var material_5 = new THREE.MeshBasicMaterial( {map:textura_5} );    
+
+var textura_6 = THREE.ImageUtils.loadTexture('https:Gris.jpg');
+var material_6 = new THREE.MeshBasicMaterial( {map:textura_6} );    
 
 //============================ AJUSTE PARAMETROS ===================================    
 Saga.translate(40, 17, -10);
@@ -51,15 +63,25 @@ TorchitForma.translate(-15, 8, -40);
 P4forma.rotateY( Math.PI/4);
 P2forma.rotateY( Math.PI/6);
 
+//============================ Material ===================================  
 P1arbolMalla = new THREE.Mesh(P1arbolForma, material_1);
 P2malla = new THREE.Mesh( P2forma, material_2 );
-
+P3arbolMalla = new THREE.Mesh( P3arbolForma, material_3 );
+P4malla = new THREE.Mesh( P4forma, material_4 );
+MagnemiteMalla = new THREE.Mesh(MagnemiteForma, material_6);
+TorchitMalla = new THREE.Mesh(TorchitForma, material_4);
+ReliquiaM = new THREE.Mesh( Reliquia, material_5 )
+SagaM = new THREE.Mesh(Saga, material_3);	              
+  
 var tableroForma = new THREE.CylinderGeometry(70, 70,1);
 tableroMalla = new THREE.Mesh(tableroForma, material);
+
 //============================ ESCENA ===================================  
 escena = new THREE.Scene();
-escena.add(tableroMalla, P1arbolMalla, P2malla);
-
+escena.add(P4malla,P2malla,P3arbolMalla,P1arbolMalla,MagnemiteMalla,TorchitMalla,tableroMalla);
+escena.add(ReliquiaM);
+escena.add(SagaM);
+  
 camara = new THREE.PerspectiveCamera();
 camara.position.z = 180;
 camara.position.y = 40;
