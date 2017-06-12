@@ -67,6 +67,3 @@ var P4extrudeSettings = {
 
 var P4forma = new THREE.ExtrudeGeometry( P4figura,P4extrudeSettings);
 
-var P4material = new THREE.MeshNormalMaterial();
-var P4malla = new THREE.Mesh( P4forma, P4material );
-
