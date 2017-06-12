@@ -99,6 +99,6 @@
 	Saga.rotateX( Math.PI/8 );
 	Saga.rotateY( Math.PI/-7 );
 	
-	var SagaM = new THREE.Mesh(Saga, SagaMaterial);
+	
 
 	
