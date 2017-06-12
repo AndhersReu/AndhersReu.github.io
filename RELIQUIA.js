@@ -66,5 +66,4 @@
 	Reliquia.merge(conominiM.geometry, conominiM.matrix);	
 	Reliquia.rotateX( Math.PI/8 );
 	Reliquia.rotateY( Math.PI/-8 );
-	var ReliquiaM = new THREE.Mesh( Reliquia, ReliquiaMaterial )
 	
